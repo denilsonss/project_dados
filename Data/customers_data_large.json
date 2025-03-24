@@ -1,0 +1,122 @@
+[
+    {
+        "customer_id": 1001,
+        "name": "Wesley Shannon",
+        "email": "craig98@aguilar.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1002,
+        "name": "Craig Cantu",
+        "email": "adampeterson@yahoo.com",
+        "region": "North"
+    },
+    {
+        "customer_id": 1003,
+        "name": "Kelsey Fox",
+        "email": "alexander77@hotmail.com",
+        "region": "East"
+    },
+    {
+        "customer_id": 1004,
+        "name": "Kevin Bennett",
+        "email": "rossrebecca@hotmail.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1005,
+        "name": "Steven Wagner",
+        "email": "catherine94@gmail.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1006,
+        "name": "Lisa Rivera",
+        "email": "ericbutler@gmail.com",
+        "region": "North"
+    },
+    {
+        "customer_id": 1007,
+        "name": "Jenna Larsen",
+        "email": "ycompton@yahoo.com",
+        "region": "North"
+    },
+    {
+        "customer_id": 1008,
+        "name": "Mathew Porter",
+        "email": "steveward@hotmail.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1009,
+        "name": "Michael Harper",
+        "email": "stephaniedavis@gmail.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1010,
+        "name": "Jody Garza",
+        "email": "andrewturner@yahoo.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1011,
+        "name": "Roy Mclaughlin Jr.",
+        "email": "connorbaker@gmail.com",
+        "region": "West"
+    },
+    {
+        "customer_id": 1012,
+        "name": "Juan Price",
+        "email": "hestertiffany@thomas.com",
+        "region": "East"
+    },
+    {
+        "customer_id": 1013,
+        "name": "Robert Dickerson",
+        "email": "ashleyriley@reed.com",
+        "region": "South"
+    },
+    {
+        "customer_id": 1014,
+        "name": "Dustin Macias",
+        "email": "vcarter@sexton.com",
+        "region": "East"
+    },
+    {
+        "customer_id": 1015,
+        "name": "Andres Lynn",
+        "email": "gonzaleselizabeth@yahoo.com",
+        "region": "North"
+    },
+    {
+        "customer_id": 1016,
+        "name": "Kaitlyn Hughes",
+        "email": "jessica32@walters.com",
+        "region": "South"
+    },
+    {
+        "customer_id": 1017,
+        "name": "Tracy Hebert",
+        "email": "jonathanmaldonado@cox.com",
+        "region": "South"
+    },
+    {
+        "customer_id": 1018,
+        "name": "David Mcbride",
+        "email": "dana89@yahoo.com",
+        "region": "North"
+    },
+    {
+        "customer_id": 1019,
+        "name": "Jessica Sherman",
+        "email": "matthewwilson@yahoo.com",
+        "region": "South"
+    },
+    {
+        "customer_id": 1020,
+        "name": "Daniel Blevins",
+        "email": "justinramos@gmail.com",
+        "region": "North"
+    }
+]

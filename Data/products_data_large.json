@@ -1,0 +1,52 @@
+[
+    {
+        "product_id": 101,
+        "product_name": "Product A",
+        "category": "Tools"
+    },
+    {
+        "product_id": 102,
+        "product_name": "Product B",
+        "category": "Gadgets"
+    },
+    {
+        "product_id": 103,
+        "product_name": "Product C",
+        "category": "Widgets"
+    },
+    {
+        "product_id": 104,
+        "product_name": "Product D",
+        "category": "Gadgets"
+    },
+    {
+        "product_id": 105,
+        "product_name": "Product E",
+        "category": "Widgets"
+    },
+    {
+        "product_id": 106,
+        "product_name": "Product F",
+        "category": "Widgets"
+    },
+    {
+        "product_id": 107,
+        "product_name": "Product G",
+        "category": "Widgets"
+    },
+    {
+        "product_id": 108,
+        "product_name": "Product H",
+        "category": "Tools"
+    },
+    {
+        "product_id": 109,
+        "product_name": "Product I",
+        "category": "Gadgets"
+    },
+    {
+        "product_id": 110,
+        "product_name": "Product J",
+        "category": "Widgets"
+    }
+]
