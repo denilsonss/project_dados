@@ -1,50 +1,46 @@
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import *
+import sys
+import os
+from pyspark.sql import functions as F
+from pyspark.sql.types import IntegerType, DoubleType
 
-spark = SparkSession.builder \
-.appName("Laod JSON to Dataframe") \
-.getOrCreate()
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
-# Caminho do arquio parquet no meu datalake
-path = r"C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake\raw\\"
+import json
+from utils import load_file
+from utils import save
 
-# Carregar o arquivo parquet no dataframe
-df_customers = spark.read.parquet(path + "customers\\part-00000-b5ff367a-859e-4fac-811d-d1f016427500-c000.snappy.parquet")
-df_products = spark.read.parquet(path + "products\\part-00000-0117e58d-1601-4fa9-bf88-2fea6af7d316-c000.snappy.parquet")
-df_sales = spark.read.parquet(path + "sales\\part-00000-ac7fdaa7-e532-4dbb-a8e2-9aeae70c549a-c000.snappy.parquet")
+with open("C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\script\\src\\curated\\config.json", encoding="utf-8") as f:
+        config = json.load(f)
+camada = "curated"
+dfs = load_file(config)  
 
-"""#Printando as tabelas e seus schemas 
-df_customers.show()
-df_customers.printSchema()
-df_products.show()
-df_products.printSchema()
-df_sales.show()
-df_sales.printSchema()"""
+def tratar_dados(df):
+    # Lista de colunas e seus tipos desejados
+    colunas_para_converter = {
+        "customer_id": IntegerType(),
+        "product_id": IntegerType(),
+        "order_id": IntegerType(),
+        "quantity": IntegerType(),
+        "price": DoubleType(),
+        "date": "date"
+    }
 
-#convertendo tipo de dados
+    for coluna, tipo in colunas_para_converter.items():
+        if coluna in df.columns:  # Verifica se a coluna existe
+            df = df.withColumn(coluna, F.col(coluna).cast(tipo))  # Aplica o cast
+    
+    # Normalização da coluna 'date', se a coluna existir
+    if "date" in df.columns:
+        df = df.withColumn("date", F.date_format("date", "dd/MM/yyyy"))
+    
+    return df
 
-df_customers = df_customers.withColumn("customer_id", col("customer_id").cast("int")) # Dado estava em tipo Long e coloquei para tipo Int
-df_products = df_products.withColumn("product_id", col("product_id").cast("int")) # Dado estava em tipo Long e coloquei para tipo Int
+dfs_tratados = {}
+for table_name, df in dfs.items():
+    print(f"Tratando a tabela: {table_name}")
+    
+    df_tratado = tratar_dados(df)
+    dfs_tratados[table_name] = df_tratado
 
-df_sales = df_sales.withColumn("order_id", col("order_id").cast("int")) \
- .withColumn("product_id", col("product_id").cast("int")) \
- .withColumn("customer_id", col("customer_id").cast("int")) \
- .withColumn("date", col("date").cast("date")) \
- .withColumn("quantity", col("quantity").cast("int")) \
- .withColumn("price", col("price").cast("double"))
 
-#normalização da coluna date, utilizando formato Dia/Mês/Ano
-df_sales = df_sales.withColumn("date", date_format("date", "dd/MM/yyyy"))
-
-"""path = r""C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake\\Curated\\"
-
-df_customers.write.parquet(path + "customers")
-df_products.write.parquet(path + "products")
-df_sales.write.parquet(path + "sales")
-
-df_customers.show()
-df_customers.printSchema()
-df_products.show()
-df_products.printSchema()
-df_sales.show()
-df_sales.printSchema()"""
+save(dfs_tratados, config, camada)

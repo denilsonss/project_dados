@@ -1,0 +1,23 @@
+{
+    "tb_sales" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake\\raw\\tb_sales",
+        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+    },
+    "tb_product" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake\\raw\\tb_product",
+        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+    },
+    "tb_customer" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake\\raw\\tb_customer",
+        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+    
+    }
+   
+    
+}
