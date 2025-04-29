@@ -8,7 +8,7 @@ import json
 from utils import load_file
 from utils import save
 
-with open("C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\script\\src\\raw\\config.json", encoding="utf-8") as f:
+with open(sys.path[-1] + "\\script\\src\\raw\\config.json", encoding="utf-8") as f:
         config = json.load(f)
 camada = "raw"
 dfs = load_file(config)

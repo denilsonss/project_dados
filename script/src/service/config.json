@@ -1,23 +1,46 @@
 {
     "tb_sales" : {
-        "file_type": "CSV",
-        "options": {"header": "true", "delimiter": ","},
-        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\Data\\sales",
-        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "\\DataLake\\curated\\tb_sales"
+        
     },
     "tb_product" : {
-        "file_type": "JSON",
-        "options": {"multiline": "true"},
-        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\Data\\products",
-        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "\\DataLake\\curated\\tb_product"
+        
     },
     "tb_customer" : {
-        "file_type": "JSON",
-        "options": {"multiline": "true"},
-        "path_source": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\Data\\customers",
-        "path_target": "C:\\Users\\Denil\\OneDrive\\Área de Trabalho\\Projeto de dados\\DataLake"
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_source": "\\DataLake\\curated\\tb_customer"
     
-    }
+    
+    },
+
+    "vendas_unificadas": {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_target": "\\DataLake"
+    },
    
     
+    "vendas_por_pedido" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_target": "\\DataLake"
+    },
+
+    "vendas_por_regiao" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_target": "\\DataLake"
+    },
+
+    "vendas_por_produto" : {
+        "file_type": "parquet",
+        "options": {"key": "value"},
+        "path_target": "\\DataLake"
+    }
 }
