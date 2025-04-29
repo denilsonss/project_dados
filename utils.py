@@ -18,7 +18,7 @@ def load_file(config: dict):
             continue
 
         path_source = os.path.join(sys.path[-1], params["path_source"].lstrip("\\/"))
-        print(f"🔹 Carregando pasta inteira de {table}: {path_source}")
+        print(f"🔹 Carregando pasta inteira de {table}")
 
         file_type = params.get("file_type", "parquet").lower()
         options = params.get("options", {})
@@ -41,6 +41,6 @@ def save(dfs: dict, config: dict, camada: str):
             table
         )
         os.makedirs(target_path, exist_ok=True)
-        print(f"💾 Salvando {table} em {target_path}")
+        print(f"💾 Salvando {table}")
         df.write.mode("overwrite").parquet(target_path)
 

@@ -2,25 +2,19 @@
     "tb_sales" : {
         "file_type": "CSV",
         "options": {"header": "true", "delimiter": ","},
-        "path_source": "Data",
-        "path_target": "\\DataLake",
-        "match_table_in_filename": true
+        "path_source": "\\Data\\sales",
+        "path_target": "\\DataLake"
     },
     "tb_product" : {
         "file_type": "JSON",
         "options": {"multiline": "true"},
-        "path_source": "Data",
-        "path_target": "\\DataLake",
-        "match_table_in_filename": true
+        "path_source": "\\Data\\products",
+        "path_target": "\\DataLake"
     },
     "tb_customer" : {
         "file_type": "JSON",
         "options": {"multiline": "true"},
-        "path_source": "Data",
-        "path_target": "\\DataLake",
-        "match_table_in_filename": true
-    
+        "path_source": "\\Data\\customers",
+        "path_target": "\\DataLake"
     }
-   
-    
 }
